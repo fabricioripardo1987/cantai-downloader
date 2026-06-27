@@ -45,7 +45,7 @@ def download():
     with tempfile.TemporaryDirectory() as tmp:
         out = os.path.join(tmp, "audio.%(ext)s")
         ydl_opts = {
-            "format": "bestaudio/best",
+           "format": "bestaudio[ext=m4a]/bestaudio[ext=webm]/bestaudio/best",
             "outtmpl": out,
             "postprocessors": [{"key": "FFmpegExtractAudio", "preferredcodec": "mp3", "preferredquality": "192"}],
             "quiet": True,
