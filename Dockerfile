@@ -11,4 +11,4 @@ COPY server.py .
 
 ENV PORT=8080
 
-CMD gunicorn -b 0.0.0.0:$PORT -t 300 server:app
+CMD gunicorn -b 0.0.0.0:$PORT -w 2 --threads 4 -t 300 server:app
